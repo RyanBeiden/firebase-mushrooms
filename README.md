@@ -1,1 +1,3 @@
-# firebase-mushrooms
+# Mushroom Hunter
+
+## First Firebase Project!
