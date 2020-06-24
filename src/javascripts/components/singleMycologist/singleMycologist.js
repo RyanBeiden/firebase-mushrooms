@@ -6,6 +6,7 @@ const buildMycologist = (e) => {
   mycologistData.getMycologistById(mycologistId)
     .then((response) => {
       const mycologist = response.data;
+
       const domString = `
       <div style="background-color: yellow; padding: 15px; margin: 45px 15px;">
         <h1>Featured Mycologist</h1>
