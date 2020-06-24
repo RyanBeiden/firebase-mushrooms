@@ -1,17 +1,17 @@
 import mushroomData from '../../helpers/data/mushroomData';
 import utils from '../../helpers/utils';
 import mushroomComponent from '../mushroom/mushroom';
+import smash from '../../helpers/data/smash';
 
 const removeShroomEvent = (e) => {
   const mushroomId = e.target.closest('.card').id;
   console.warn(mushroomId);
 
-  mushroomData.deleteMushroom(mushroomId)
-    .then((response) => {
-      console.warn('response?', response);
-
+  smash.totallyRemoveShroomie(mushroomId)
+    .then(() => {
       // eslint-disable-next-line no-use-before-define
       buildForest();
+      utils.printToDom('#single-myco', '');
     })
     .catch((err) => console.error('could not delete mushroom', err));
 };
