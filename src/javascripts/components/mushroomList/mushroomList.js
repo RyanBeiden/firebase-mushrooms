@@ -52,7 +52,7 @@ const buildForest = () => {
       utils.printToDom('#forest', domString);
       $('body').on('click', '.delete-shroom', removeShroomEvent);
       $('body').on('click', '#show-add-mush', newMushroom.showForm);
-      $('body').on('click', '#mush-creator', addShroomEvent);
+      $('body').one('click', '#mush-creator', addShroomEvent);
     })
     .catch((err) => console.error('get mushrooms broke...', err));
 };

@@ -43,7 +43,7 @@ const buildHut = () => {
 
       $('body').on('click', '.myco-card', singleMycologist.buildMycologist);
       $('body').on('click', '#show-myco-form', newMycologist.showMycoForm);
-      $('body').on('click', '#myco-creator', addMycoFormData);
+      $('body').one('click', '#myco-creator', addMycoFormData);
     })
     .catch((err) => console.error('something broke here:', err));
 };
