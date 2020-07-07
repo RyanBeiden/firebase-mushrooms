@@ -19,7 +19,7 @@ const showForm = () => {
         <label for="weight">Weight (in grams):</label>
         <input type="number" class="form-control" id="weight" placeholder="22">
       </div>
-      <button type="submit" class="btn btn-primary" id="mush-creator">Submit</button>
+      <button type="submit" class="btn btn-success" id="mush-creator">Add Mushroom</button>
     </form>
   `;
 

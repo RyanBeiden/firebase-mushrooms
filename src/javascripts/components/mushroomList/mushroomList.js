@@ -41,7 +41,7 @@ const buildForest = () => {
       let domString = `
         <h2 class="text-center m-4">Forest</h2>
           <div class="d-flex justify-content-center mb-4">
-            <button class="btn btn-success" id="show-add-mush">New Shroom <i class="far fa-plus-square"></i></button>
+            <button class="btn btn-success" id="show-add-mush">New Shroom <i class="fas fa-plus-circle"></i></button>
           </div>
         <div class="d-flex flex-wrap">
       `;
