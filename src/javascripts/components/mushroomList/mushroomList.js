@@ -4,6 +4,7 @@ import utils from '../../helpers/utils';
 import mushroomComponent from '../mushroom/mushroom';
 import smash from '../../helpers/data/smash';
 import mycologistMushroomData from '../../helpers/data/mycologistMushroomData';
+import editMushroom from '../editMushroom/editMushroom';
 
 const removeShroomEvent = (e) => {
   const mushroomId = e.target.closest('.card').id;
@@ -15,6 +16,30 @@ const removeShroomEvent = (e) => {
       utils.printToDom('#single-myco', '');
     })
     .catch((err) => console.error('could not delete mushroom', err));
+};
+
+const showShroomForm = (e) => {
+  editMushroom.showForm(e.target.closest('.card').id);
+};
+
+const editShroomEvent = (e) => {
+  e.preventDefault();
+  const mushroomId = e.target.closest('.edit-mushroom').id;
+
+  const editedMush = {
+    name: $('#edit-mush-name').val(),
+    size: $('#edit-mush-size').val(),
+    location: $('#edit-location').val(),
+    weight: $('#edit-weight').val() * 1,
+  };
+
+  mushroomData.updateMushroom(mushroomId, editedMush)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      buildForest();
+      utils.printToDom('#edit-shroom', '');
+    })
+    .catch((err) => console.error('could not edit mushroom', err));
 };
 
 const addShroomEvent = (e) => {
@@ -84,6 +109,8 @@ const buildForest = () => {
 
 const forestEvents = () => {
   $('body').on('click', '.delete-shroom', removeShroomEvent);
+  $('body').on('click', '.edit-shroom', showShroomForm);
+  $('body').on('click', '#mush-editor', editShroomEvent);
   $('body').on('click', '#show-add-mush', newMushroom.showForm);
   $('body').on('click', '#mush-creator', addShroomEvent);
   $('body').on('click', '.myco-shroom-checkbox', mycoMushroomController);
