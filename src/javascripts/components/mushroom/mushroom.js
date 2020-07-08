@@ -1,3 +1,5 @@
+import './mushroom.scss';
+
 const mushroomMaker = (mushroom) => {
   let domString = `
   <div class="col-3">
@@ -21,7 +23,8 @@ const mushroomMaker = (mushroom) => {
 
   domString += `
         </form>
-        <button class="btn btn-danger delete-shroom"><i class="fas fa-times-circle"></i> Delete Shroom</button>
+        <button class="mushroom-button btn btn-danger delete-shroom"><i class="fas fa-times-circle"></i> Delete Shroom</button>
+        <button class="mushroom-button btn btn-primary edit-shroom"><i class="far fa-edit"></i> Edit Shroom</button>
       </div>
     </div>
   </div>
