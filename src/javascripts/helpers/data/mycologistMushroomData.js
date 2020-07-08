@@ -42,4 +42,12 @@ const getMycoShroomsByShroomId = (shroomId) => new Promise((resolve, reject) => 
 
 const deleteMycoMushroom = (mycoMushroomId) => axios.delete(`${baseUrl}/mycologistMushrooms/${mycoMushroomId}.json`);
 
-export default { getMycoShroomsByMycoUid, getMycoShroomsByShroomId, deleteMycoMushroom };
+const addMycologistMushroom = (mewMycoMushroomObj) => axios.post(`${baseUrl}/mycologistMushrooms.json`, mewMycoMushroomObj);
+
+export default {
+  getMycoShroomsByMycoUid,
+  getMycoShroomsByShroomId,
+  deleteMycoMushroom,
+  getAllMycoShrooms,
+  addMycologistMushroom,
+};

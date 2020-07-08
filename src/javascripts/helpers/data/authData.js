@@ -24,6 +24,7 @@ const checkLoginStatus = () => {
       newMycoDiv.removeClass('hide');
 
       mushroomList.buildForest();
+      mushroomList.forestEvents();
       mycologistList.buildHut();
     } else {
       authDiv.removeClass('hide');
